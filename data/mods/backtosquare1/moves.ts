@@ -1,5 +1,5 @@
 export const Moves: {[k: string]: ModdedMoveData} = {
-	10000000voltthunderbolt: {
+	"10000000voltthunderbolt": {
 		exists: true,
 		num: 719,
 		accuracy: true,
