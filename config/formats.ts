@@ -2076,4 +2076,20 @@ export const Formats: FormatList = [
 		banlist: ['All Pokemon', 'Belly Drum', 'Huge Power'],
 		unbanlist: ['Shadow Tag', 'Pichu', 'Cleffa', 'Igglybuff', 'Togepi', 'Tyrogue', 'Smoochum', 'Elekid', 'Magby', 'Azurill', 'Wynaut', 'Budew', 'Chingling', 'Bonsly', 'Mime Jr.', 'Happiny', 'Munchlax', 'Riolu', 'Mantyke', 'Toxel'],
 	},
+	{
+        name: "[Gen 8] Back To Square One",
+        desc: `<b>Back To Square One</b>: A National Dex metagame where every move, held item, ability and Pokémon stats work like they did in their debut generation`,
+        threads: [
+            `&bullet; <a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/">Solomods Megathread</a>`,
+        ],
+        mod: 'backtosquare1',
+        ruleset: ['Standard NatDex', 'Dynamax Clause', 'Sleep Clause Mod','Freeze Clause Mod', 'Species Clause', 'Moody Clause', 'Evasion Moves Clause', 'Swagger Clause', 'Baton Pass Clause', 'OHKO Clause'],
+        banlist: ['Power Construct', 'Dig', 'Fly'],
+        unbanlist: [
+             'Chien-Pao','Flutter Mane', 'Kyurem-Black', 'Melmetal', 'Regieleki', 'Roaring Moon', 'Spectrier', 'Zygarde'
+            ],    
+            onSwitchIn(pokemon) {
+                this.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
+            },    
+    },
 ];
