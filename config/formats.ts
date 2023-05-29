@@ -1139,6 +1139,22 @@ export const Formats: FormatList = [
 		column: 2,
 	},
 	{
+        name: "[Gen 8] Back To Square One",
+        desc: `<b>Back To Square One</b>: A National Dex metagame where every move, held item, ability and Pokémon stats work like they did in their debut generation`,
+        threads: [
+            `&bullet; <a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/">Solomods Megathread</a>`,
+        ],
+        mod: 'backtosquare1',
+        ruleset: ['Standard NatDex', 'Dynamax Clause', 'Sleep Clause Mod','Freeze Clause Mod', 'Species Clause', 'Moody Clause', 'Evasion Moves Clause', 'OHKO Clause'],
+        banlist: ['Power Construct','Arena Trap', 'Shadow Tag','Baton Pass', 'Dig', 'Fly', 'Last Respects' ],
+        unbanlist: [
+             'Chien-Pao','Flutter Mane', 'Kyurem-Black', 'Melmetal', 'Roaring Moon', 'Spectrier', 'Zygarde','Houndstone'
+            ],    
+            onSwitchIn(pokemon) {
+                this.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
+            },    
+    },
+	{
 		name: "[Gen 8] A Golden Experience",
 		desc: `A fun metagame where we try to make everything viable, or at least usable. We also have new Fakemons!`,
 		threads: [
@@ -2075,21 +2091,5 @@ export const Formats: FormatList = [
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
 		banlist: ['All Pokemon', 'Belly Drum', 'Huge Power'],
 		unbanlist: ['Shadow Tag', 'Pichu', 'Cleffa', 'Igglybuff', 'Togepi', 'Tyrogue', 'Smoochum', 'Elekid', 'Magby', 'Azurill', 'Wynaut', 'Budew', 'Chingling', 'Bonsly', 'Mime Jr.', 'Happiny', 'Munchlax', 'Riolu', 'Mantyke', 'Toxel'],
-	},
-	{
-        name: "[Gen 8] Back To Square One",
-        desc: `<b>Back To Square One</b>: A National Dex metagame where every move, held item, ability and Pokémon stats work like they did in their debut generation`,
-        threads: [
-            `&bullet; <a href="https://www.smogon.com/forums/threads/solomods-megathread.3711007/">Solomods Megathread</a>`,
-        ],
-        mod: 'backtosquare1',
-        ruleset: ['Standard NatDex', 'Dynamax Clause', 'Sleep Clause Mod','Freeze Clause Mod', 'Species Clause', 'Moody Clause', 'Evasion Moves Clause', 'Swagger Clause', 'Baton Pass Clause', 'OHKO Clause'],
-        banlist: ['Power Construct', 'Dig', 'Fly'],
-        unbanlist: [
-             'Chien-Pao','Flutter Mane', 'Kyurem-Black', 'Melmetal', 'Regieleki', 'Roaring Moon', 'Spectrier', 'Zygarde'
-            ],    
-            onSwitchIn(pokemon) {
-                this.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
-            },    
-    },
+	}
 ];
